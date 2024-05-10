@@ -9,7 +9,6 @@ close all
 clc
 
 %% Aufgabe 1 %%
-
 d = 1/sqrt(2);
 w0 = sqrt(2);
 k = 2;
@@ -20,18 +19,15 @@ den = [1, 2*d*w0, w0^2];
 sys_tf = tf(num,den);
 
 t1 = 0:0.1:10;
-
 verlauf = step(sys_tf,t1);
 
-d_ = 1;
-w0_ = 1;
-k_ = 1;
+d1 = 1;
+w01 = 1;
+k1 = 1;
+par = [d1, w01, k1];
 
-par = [d_, w0_, k_];
+Opt = fminsearch (@(par) kosten(par, verlauf), par); 	
 
-
-erg = fminsearch (@(par) kosten(par, verlauf), par); 	
-
-Daempfung = erg(1) 	
-Eigenfrequenz = erg(2) 	
-Verstaerkung = erg(3) 
+d_opt = Opt(1);
+w0_opt = Opt(2); 	
+k_opt = Opt(3);

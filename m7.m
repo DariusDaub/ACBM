@@ -14,6 +14,7 @@ for i=1:5000
     Z(i+1) = zuf_falsch(Z(i));
 end
 
+figure(1)
 plot(Z,'r.')
 
 %% Aufgabe 2 %%
@@ -21,7 +22,7 @@ plot(Z,'r.')
 vek = Z(:,100:110);
 vek2 = Z(:,3225:3235);
 
-figure(1)
+figure(2)
 plot(vek,vek2);
 
 [R,P] = corrcoef(vek,vek2);    
@@ -31,7 +32,7 @@ plot(vek,vek2);
 vek3 = Z(:,100:200);
 vek4 = Z(:,725:825);
 
-figure(2)
+figure(3)
 plot(vek3,vek4);
 [R2,P2] = corrcoef(vek3,vek4);
 
@@ -43,7 +44,7 @@ for i = 1:length(vek3)
     end
 end
 
-figure(3)
+figure(4)
 plot(vek3,vek4)
 
 %% Aufgabe 5 %%
@@ -54,7 +55,7 @@ for i = 1:10000
     zf(i) = zufallszahl(untere_grenze, obere_grenze);
 end
 
-figure(4)
+figure(5)
 hist(zf,500)
 
 figure(5)
@@ -65,11 +66,11 @@ tic
 sortierte_Zahlen = sortieren(zf);
 t1 = toc;
 
-figure(5)
+figure(6)
 plot(sortierte_Zahlen);
 
 D = diff(sortierte_Zahlen);
-figure(6)
+figure(7)
 plot(D);
 
 all(D >= 0)

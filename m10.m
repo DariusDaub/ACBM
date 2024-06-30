@@ -50,7 +50,7 @@ x2 = U\y;
 P = [5 7 4; 6 11 2; 3 2 6];
 p = ispositivedefinite(P);
 
-% P_chol = chol(P);
+% P_chol = chol(P); ("Matrix must be postive definite")
 
 %% Aufgabe 9 %%
 P_D = (P + P')/2;

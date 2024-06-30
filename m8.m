@@ -195,7 +195,7 @@ m1 = lsim(F1,x,t);
 m2 = lsim(F2,x,t);
 m3 = lsim(F3,x,t);
 m4 = lsim(F4,x,t);
-x_clean = sin(0.8*omega_G);
+x_clean = sin(0.8*omega_G*t);
 figure(8)
 plot(t,x)
 hold on;
